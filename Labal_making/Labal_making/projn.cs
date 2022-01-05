@@ -20,11 +20,20 @@ namespace Labal_making
         }
         public partial class projn_non
         {
-            public string name; public string prof_n; int year; public string agency;
+            public string name; public string prof_n; public int year; public string agency;
 
             public projn_non(string _name, string _prof_n, int _year, string _agency)
             {
                 name = _name; prof_n = _prof_n; year = _year; agency = _agency;
+            }
+
+            public void none()
+            {
+                this.name = "";
+                this.year = 0;
+                this.prof_n = "";
+                this.agency = "";
+
             }
         } 
             
