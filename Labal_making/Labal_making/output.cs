@@ -12,7 +12,7 @@ namespace Labal_making
 {
     internal partial class output
     {
-        public void outputint (List<Layout> Layout,string path_file, bool Large)
+        public static void outputint (List<Layout> Layout,string path_file, bool Large)
         {
             Excel.Application Excellapp = null;
             Excel.Workbook wb = null;
@@ -30,17 +30,25 @@ namespace Labal_making
                 Excel.Worksheet ws = wb.Worksheets.get_Item(page);
                 for (int i = 0; i < Layout.Count; i++)
                 {
+                    int xp = 40*i;
+
                     //측면부 제목부 초기화및 입력
-                    int xp = i;
+                    
                     int sub_title1_y_n = 11 + xp; int sub_title2_y_n = 34 + xp;
                     int sub_title1_x = 2; int sub_title2_x = 4;int sub_title3_x = 6; int sub_title4_x = 8;int sub_title5_x = 10;int sub_title6_x = 12;int sub_title7_x = 14;
-                    ws.Range[ws.Cells[sub_title1_y_n, sub_title1_x], ws.Cells[sub_title1_y_n, sub_title1_x]].Merge();
-                    ws.Range[ws.Cells[sub_title1_y_n, sub_title2_x], ws.Cells[sub_title1_y_n, sub_title2_x]].Merge();
-                    ws.Range[ws.Cells[sub_title1_y_n, sub_title3_x], ws.Cells[sub_title1_y_n, sub_title3_x]].Merge();
-                    ws.Range[ws.Cells[sub_title1_y_n, sub_title4_x], ws.Cells[sub_title1_y_n, sub_title4_x]].Merge();
-                    ws.Range[ws.Cells[sub_title1_y_n, sub_title5_x], ws.Cells[sub_title1_y_n, sub_title5_x]].Merge();
-                    ws.Range[ws.Cells[sub_title1_y_n, sub_title6_x], ws.Cells[sub_title1_y_n, sub_title6_x]].Merge();
-                    ws.Range[ws.Cells[sub_title1_y_n, sub_title7_x], ws.Cells[sub_title1_y_n, sub_title7_x]].Merge();
+
+                    
+                    
+                    
+                    ws.Range[ws.Cells[11+xp, 2], ws.Cells[34+xp, 2]].Merge();
+                    ws.Range[ws.Cells[11+xp, 4], ws.Cells[34+xp, 4]].Merge();
+                    ws.Range[ws.Cells[11+xp, 6], ws.Cells[34+xp, 6]].Merge();
+                    ws.Range[ws.Cells[11 + xp, 8], ws.Cells[34 + xp, 8]].Merge();
+                    ws.Range[ws.Cells[11 + xp, 10], ws.Cells[34 + xp, 10]].Merge();
+                    ws.Range[ws.Cells[11 + xp, 12], ws.Cells[34 + xp, 12]].Merge();
+                    ws.Range[ws.Cells[11 + xp, 14], ws.Cells[34 + xp, 14]].Merge();
+
+                    string ik1 = Layout[i].title_su1;
 
                     ws.Cells[sub_title1_y_n, sub_title1_x] = Layout[i].title_su1;
                     ws.Cells[sub_title1_y_n, sub_title2_x] = Layout[i].title_su2;
@@ -49,6 +57,9 @@ namespace Labal_making
                     ws.Cells[sub_title1_y_n, sub_title5_x] = Layout[i].title_su5;
                     ws.Cells[sub_title1_y_n, sub_title6_x] = Layout[i].title_su6;
                     ws.Cells[sub_title1_y_n, sub_title7_x] = Layout[i].title_su7;
+                    Console.WriteLine("제목부 머지 완료");
+
+
 
                     // 측면부 부서부 초기화 및 입력
                     int sanhak_a = 36 + xp; int sanhak_b = 40 + xp;
@@ -67,7 +78,7 @@ namespace Labal_making
                     ws.Cells[sanhak_a, sub_title5_x] = buseo;
                     ws.Cells[sanhak_a, sub_title6_x] = buseo;
                     ws.Cells[sanhak_a, sub_title7_x] = buseo;
-
+                    Console.WriteLine("부서부 머지 완료");
 
                     // 측면부 제목 상단부 초기화
                     int name_y = 3 + xp;
@@ -75,21 +86,26 @@ namespace Labal_making
                     int kk_y = 7 + xp;
                     int num_y = 9 + xp;
                     int vio = 30;
+                    for (int j = 0; j < 13; j += 2)
+                    {
+                        Console.WriteLine("관리 장부 진입");
+                        int kipa = j + 2;
+                        ws.Cells[name_y - 1, kipa] = "관리번호";
+                        ws.Cells[year_y - 1, kipa] = "생산연도";
+                        ws.Cells[kk_y - 1, kipa] = "보존기한";
+                        ws.Cells[num_y - 1, kipa] = "분류번호";
+                        ws.Cells[10 + xp, kipa] = "제목";
+                        ws.Cells[35 + xp, kipa] = "부서명";
+                    }
                     ws.Range[ws.Cells[name_y,1], ws.Cells[name_y, 4]].RowHeight = 30;
                     ws.Range[ws.Cells[year_y, 1], ws.Cells[year_y, 4]].RowHeight = 30;
                     ws.Range[ws.Cells[kk_y, 1], ws.Cells[kk_y, 4]].RowHeight = 30;
                     ws.Range[ws.Cells[num_y, 1], ws.Cells[num_y, 4]].RowHeight = 30;
-                    for( int j = 0; j< 12; i++)
-                    {
-                        int kipa = j + 2;
-
-                    }
-
-
+                    Console.WriteLine("측면부 설정 완료");
 
 
                     // 정면부 제목부 및 입력
-                    int t1a_y = 2 + xp;  int t1b_y = 5 + xp; int ta_x = 16 + xp; int tb_x = 21 + xp;
+                    int t1a_y = 2 + xp;  int t1b_y = 5 + xp; int ta_x = 16 ; int tb_x = 21 ;
                     int t2a_y = 6 + xp; int t2b_y = 10 + xp;
                     int t3a_y = 11 + xp; int t3b_y = 17 + xp;
                     int t4a_y = 18 + xp; int t4b_y = 24 + xp;
@@ -110,7 +126,8 @@ namespace Labal_making
                     ws.Cells[t4a_y, ta_x] = Layout[i].title4;
                     ws.Cells[t5a_y, ta_x] = Layout[i].title5;
                     ws.Cells[t6a_y, ta_x] = Layout[i].title6;
-                    ws.Cells[t7a_y, ta_x] = Layout[i].title7;
+                    ws.Cells[t7a_y, ta_x] = Layout[i].title7; 
+                    Console.WriteLine("정면부 머지 완료");
 
 
                     //정면부 부서부
@@ -125,7 +142,7 @@ namespace Labal_making
                     ws.Range[ws.Cells[y_3a, x_a], ws.Cells[y_3b, x_b]].Merge();
                     ws.Range[ws.Cells[y_4a, x_a], ws.Cells[y_4b, x_b]].Merge();
                     ws.Range[ws.Cells[y_1a, x_c], ws.Cells[y_1b, x_d]].Merge();
-                    ws.Range[ws.Cells[y_2a, x_c], ws.Cells[y_3b, x_d]].Merge();
+                    ws.Range[ws.Cells[y_2a, x_c], ws.Cells[y_2b, x_d]].Merge();
                     ws.Range[ws.Cells[y_3a, x_c], ws.Cells[y_3b, x_d]].Merge();
 
                     ws.Cells[y_3a, x_c] = buseo;
@@ -135,6 +152,7 @@ namespace Labal_making
                     ws.Cells[y_2a, x_a] = buseo;
                     ws.Cells[y_3a, x_a] = buseo;
                     ws.Cells[y_4a, x_a] = buseo;
+                    Console.WriteLine("정면부 부서 완료");
 
 
                     //정면부 연도부
@@ -148,8 +166,8 @@ namespace Labal_making
                     ws.Range[ws.Cells[yz1, xpz1],ws.Cells[yv1, xpz2]].Merge();
                     ws.Range[ws.Cells[yz2, xpz1], ws.Cells[yv2, xpz2]].Merge();
                     ws.Range[ws.Cells[yz3, xpz1], ws.Cells[yv3, xpz2]].Merge();
-                    ws.Range[ws.Cells[yz1, xppp1], ws.Cells[yv1, xppp1]].Merge();
-                    ws.Range[ws.Cells[yz2, xppp1], ws.Cells[yv2, xppp1]].Merge();
+                    ws.Range[ws.Cells[yz1, xppp1], ws.Cells[yv1, xppp2]].Merge();
+                    ws.Range[ws.Cells[yz2, xppp1], ws.Cells[yv2, xppp2]].Merge();
                     ws.Range[ws.Cells[yz1, xppp3], ws.Cells[yv1, xppp4]].Merge();
                     ws.Range[ws.Cells[yz2, xppp3], ws.Cells[yv2, xppp4]].Merge();
 
@@ -161,9 +179,9 @@ namespace Labal_making
                     ws.Cells[yz2, xppp1] = Layout[i].year5;
                     ws.Cells[yz1, xppp3] = Layout[i].year6;
                     ws.Cells[yz2, xppp3] = Layout[i].year7;
+                    Console.WriteLine("정면부 연도 완료");
 
-
-
+                    Console.WriteLine("한바퀴 순회 완료");
 
                 }
             }

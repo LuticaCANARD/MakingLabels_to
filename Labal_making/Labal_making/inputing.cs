@@ -16,28 +16,28 @@ namespace Labal_making
             return path;
         }
 
-        public List<projn> got_list(string path_of_file)
+        public static List<projn> got_list(string path_of_file)
         {
             List<projn> output = new List<projn>();
             Excel.Application Excellapp = null;
             Excel.Workbook wb = null;
             
-
             try
             {
                 Excellapp = new Excel.Application();
                 wb = Excellapp.Workbooks.Open(path_of_file);
                 Excel.Worksheet ws = wb.Worksheets.get_Item(1);
                int readingpoint = 2;
-                while (!(ws.Cells[readingpoint, 1] != ""&& readingpoint<5000))
+                Console.WriteLine(ws.Cells[readingpoint, 1].Value());
+                while ((ws.Cells[readingpoint, 1].Value() != ""&& readingpoint<5000))
                 {
                     projn pix = new projn(
-                        ws.Cells[readingpoint, 1],
-                        ws.Cells[readingpoint, 2],
-                        ws.Cells[readingpoint, 4],
-                        ws.Cells[readingpoint, 3],
-                        ws.Cells[readingpoint, 5],
-                        ws.Cells[readingpoint, 6]);
+                        ws.Cells[readingpoint, 1].Value(),
+                        ws.Cells[readingpoint, 2].Value(),
+                        (int)ws.Cells[readingpoint, 4].Value(),
+                        ws.Cells[readingpoint, 3].Value(),
+                        (int)ws.Cells[readingpoint, 5].Value(),
+                        (int)ws.Cells[readingpoint, 6].Value());
                     output.Add(pix);
                     readingpoint++;
                 }

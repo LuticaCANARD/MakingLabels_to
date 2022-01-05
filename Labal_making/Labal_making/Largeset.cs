@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Labal_making
 {
-    internal class Largeset
+    internal partial class Largeset
     {
-        public List<projn.projn_non> Get_Anomimuslist(List<projn> alllist,bool smallmode)
+        public static List<projn.projn_non> Get_Anomimuslist(List<projn> alllist,bool smallmode)
         {
             List < projn.projn_non > output = new List<projn.projn_non>();
             for (int i = 0; i < alllist.Count; i++)
@@ -34,7 +34,7 @@ namespace Labal_making
             return output;
         }
 
-        public List<Layout> Make_Layout(List<projn.projn_non> projn_s)
+        public static List<Layout> Make_Layout(List<projn.projn_non> projn_s)
         {
             List<Layout> output = new List<Layout>();
             if (projn_s.Count % 7 == 0)
@@ -48,9 +48,9 @@ namespace Labal_making
             {
                 int counter = projn_s.Count;
                 List<projn.projn_non> ocut = new List<projn.projn_non>();
-                while ( !(counter !=0))
+                while ( (counter !=0))
                 {
-                    ocut.Add(projn_s[counter]);
+                    ocut.Add(projn_s[counter-1]);
                     if(ocut.Count == 7)
                     {
                         Layout layout = new Layout(ocut[0], ocut[1], ocut[2], ocut[3], ocut[4], ocut[5], ocut[6]);
