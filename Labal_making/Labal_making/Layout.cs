@@ -8,10 +8,10 @@ namespace Labal_making
 {
     internal partial class Layout
     {
-        protected string title1; protected string title2; protected string title3; protected string title4; protected string title5; protected string title6; protected string title7;
-        protected string profn1; protected string profn2; protected string profn3; protected string profn4; protected string profn5; protected string profn6; protected string profn7;
-        protected string title_su1; protected string title_su2; protected string title_su3; protected string title_su4; protected string title_su5; protected string title_su6; protected string title_su7;
-        protected int year1; protected int year2; protected int year3; protected int year4; protected int year5; protected int year6; protected int year7;
+        public string title1; public string title2; public string title3; public string title4; public string title5; public string title6; public string title7;
+        public string profn1; public string profn2; public string profn3; public string profn4; public string profn5; public string profn6; public string profn7;
+        public string title_su1; public string title_su2; public string title_su3; public string title_su4; public string title_su5; public string title_su6; public string title_su7;
+        public int year1; public int year2; public int year3; public int year4; public int year5; public int year6; public int year7;
 
         public Layout(projn.projn_non a1, projn.projn_non a2, projn.projn_non a3, projn.projn_non a4, projn.projn_non a5, projn.projn_non a6, projn.projn_non a7)
         {
