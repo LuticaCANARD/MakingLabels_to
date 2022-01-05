@@ -2,7 +2,8 @@
 using System.Reflection;
 
 var url = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-Console.WriteLine("Hello, World!");
+Console.WriteLine("made by : Lutica (presan100@gmail.com)");
+Console.Write("for more information : https://github.com/LuticaCANARD/MakingLabels_to");
 
 Console.WriteLine(url);
 List<Labal_making.projn> pio = new List<Labal_making.projn>();
@@ -15,4 +16,12 @@ samll_list = Labal_making.Largeset.Get_Anomimuslist(pio, true);
 //big
 List<Labal_making.Layout>L_big = new List<Labal_making.Layout>();
 L_big = Labal_making.Largeset.Make_Layout(big_list);
-Labal_making.output.outputint(L_big, url + "\\서식화 본.xlsx", true);
+Labal_making.output.outputint(L_big, url + "\\결과.xlsx", true);
+
+//small
+
+List<Labal_making.Layout> L_sma = new List<Labal_making.Layout>();
+L_sma = Labal_making.Largeset.Make_Layout(samll_list);
+Labal_making.output.outputint(L_sma, url + "\\결과.xlsx", false);
+
+Console.WriteLine(" 완료");

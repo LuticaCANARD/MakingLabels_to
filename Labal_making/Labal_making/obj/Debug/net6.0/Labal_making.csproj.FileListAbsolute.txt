@@ -1,5 +1,4 @@
 D:\라벨제조기\Labal_making\Labal_making\obj\Debug\net6.0\Labal_making.GlobalUsings.g.cs
-D:\라벨제조기\Labal_making\Labal_making\obj\Debug\net6.0\Labal_making.csproj.AssemblyReference.cache
 D:\라벨제조기\Labal_making\Labal_making\obj\Debug\net6.0\Interop.Microsoft.Office.Interop.Excel.dll
 D:\라벨제조기\Labal_making\Labal_making\obj\Debug\net6.0\Interop.Microsoft.Office.Core.dll
 D:\라벨제조기\Labal_making\Labal_making\obj\Debug\net6.0\Labal_making.csproj.ResolveComReference.cache
@@ -17,3 +16,4 @@ D:\라벨제조기\Labal_making\Labal_making\obj\Debug\net6.0\Labal_making.dll
 D:\라벨제조기\Labal_making\Labal_making\obj\Debug\net6.0\ref\Labal_making.dll
 D:\라벨제조기\Labal_making\Labal_making\obj\Debug\net6.0\Labal_making.pdb
 D:\라벨제조기\Labal_making\Labal_making\obj\Debug\net6.0\Labal_making.genruntimeconfig.cache
+D:\라벨제조기\Labal_making\Labal_making\obj\Debug\net6.0\Labal_making.csproj.AssemblyReference.cache

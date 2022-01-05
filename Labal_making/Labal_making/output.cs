@@ -86,6 +86,8 @@ namespace Labal_making
                     int kk_y = 7 + xp;
                     int num_y = 9 + xp;
                     int vio = 30;
+                    int[] kise = { Layout[i].year1, Layout[i].year2, Layout[i].year3, Layout[i].year4, Layout[i].year5, Layout[i].year6, Layout[i].year7 };
+                    int lk = 0 ;
                     for (int j = 0; j < 13; j += 2)
                     {
                         Console.WriteLine("관리 장부 진입");
@@ -93,10 +95,14 @@ namespace Labal_making
                         ws.Cells[name_y - 1, kipa] = "관리번호";
                         ws.Cells[year_y - 1, kipa] = "생산연도";
                         ws.Cells[kk_y - 1, kipa] = "보존기한";
+                        ws.Cells[year_y, kipa] = kise[lk];
+                        lk++;
                         ws.Cells[num_y - 1, kipa] = "분류번호";
                         ws.Cells[10 + xp, kipa] = "제목";
                         ws.Cells[35 + xp, kipa] = "부서명";
                     }
+
+
                     ws.Range[ws.Cells[name_y,1], ws.Cells[name_y, 4]].RowHeight = 30;
                     ws.Range[ws.Cells[year_y, 1], ws.Cells[year_y, 4]].RowHeight = 30;
                     ws.Range[ws.Cells[kk_y, 1], ws.Cells[kk_y, 4]].RowHeight = 30;
@@ -156,8 +162,8 @@ namespace Labal_making
 
 
                     //정면부 연도부
-                    int yz1 = 23 + xp; int xpz1 = 25; int xpz2 = 26; int xppp1 = 28; int xppp2 = 29; int xppp3 = 31; int xppp4 = 32;
-                    int yv1 = 25 + xp;
+                    int yz1 = 22 + xp; int xpz1 = 25; int xpz2 = 26; int xppp1 = 28; int xppp2 = 29; int xppp3 = 31; int xppp4 = 32;
+                    int yv1 = 24 + xp;
                     int yz2 = 26 + xp;
                     int yv2 = 28 + xp;
                     int yz3 = 30 + xp;
@@ -191,8 +197,9 @@ namespace Labal_making
             }
             finally
             {
-                Console.WriteLine("파싱완료");
-                wb.Close();
+                Console.WriteLine("파일작업 완료");
+                if (Large == false) { wb.Close(); }
+              
             }
         }
     }
