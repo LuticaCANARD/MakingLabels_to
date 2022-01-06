@@ -12,18 +12,14 @@ namespace Labal_making
 {
     internal partial class output
     {
-        public static void outputint (List<Layout> Layout,string path_file, bool Large)
+        public static void outputint (List<Layout> Layout,string path_file, int page)
         {
             Excel.Application Excellapp = null;
             Excel.Workbook wb = null;
             string buseo = "한국교통대학교 산학협력단";
             try
             {
-                int page = 2;
-                if (Large==true)
-                {
-                    page = 1;
-                }
+                
                 
                 Excellapp = new Excel.Application();
                 wb = Excellapp.Workbooks.Open(path_file);
@@ -95,6 +91,7 @@ namespace Labal_making
                         ws.Cells[name_y - 1, kipa] = "관리번호";
                         ws.Cells[year_y - 1, kipa] = "생산연도";
                         ws.Cells[kk_y - 1, kipa] = "보존기한";
+                        ws.Cells[kk_y, kipa] = "5년";
                         ws.Cells[year_y, kipa] = kise[lk];
                         lk++;
                         ws.Cells[num_y - 1, kipa] = "분류번호";
@@ -207,7 +204,7 @@ namespace Labal_making
             finally
             {
                 Console.WriteLine("파일작업 완료");
-                if (Large == false) { wb.Close(); }
+                if (page == 2) { wb.Close(); }
               
             }
         }
