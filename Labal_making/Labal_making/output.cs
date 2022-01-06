@@ -20,7 +20,7 @@ namespace Labal_making
             try
             {
                 int page = 2;
-                if (Large)
+                if (Large==true)
                 {
                     page = 1;
                 }
@@ -108,6 +108,15 @@ namespace Labal_making
                     ws.Range[ws.Cells[kk_y, 1], ws.Cells[kk_y, 4]].RowHeight = 30;
                     ws.Range[ws.Cells[num_y, 1], ws.Cells[num_y, 4]].RowHeight = 30;
                     Console.WriteLine("측면부 설정 완료");
+
+                    // 이름부 입력
+                    ws.Cells[3 + xp, 2] = Layout[i].profn1;
+                    ws.Cells[3 + xp, 4] = Layout[i].profn2;
+                    ws.Cells[3 + xp, 6] = Layout[i].profn3;
+                    ws.Cells[3 + xp, 8] = Layout[i].profn4;
+                    ws.Cells[3 + xp, 10] = Layout[i].profn5;
+                    ws.Cells[3 + xp, 12] = Layout[i].profn6;
+                    ws.Cells[3 + xp, 14] = Layout[i].profn7;
 
 
                     // 정면부 제목부 및 입력
