@@ -16,7 +16,7 @@ namespace Labal_making
         {
             Excel.Application Excellapp = null;
             Excel.Workbook wb = null;
-            string buseo = "한국교통대학교 산학협력단";
+            string buseo = "산학협력단 (의왕)";
             try
             {
                 
@@ -67,13 +67,13 @@ namespace Labal_making
                     ws.Range[ws.Cells[sanhak_a, sub_title6_x], ws.Cells[sanhak_b, sub_title6_x]].Merge();
                     ws.Range[ws.Cells[sanhak_a, sub_title7_x], ws.Cells[sanhak_b, sub_title7_x]].Merge();
 
-                    ws.Cells[sanhak_a, sub_title1_x] = buseo;
-                    ws.Cells[sanhak_a, sub_title2_x] = buseo;
-                    ws.Cells[sanhak_a, sub_title3_x] = buseo;
-                    ws.Cells[sanhak_a, sub_title4_x] = buseo;
-                    ws.Cells[sanhak_a, sub_title5_x] = buseo;
-                    ws.Cells[sanhak_a, sub_title6_x] = buseo;
-                    ws.Cells[sanhak_a, sub_title7_x] = buseo;
+                    ws.Cells[sanhak_a, sub_title1_x] = Layout[i].agent1;
+                    ws.Cells[sanhak_a, sub_title2_x] = Layout[i].agent2;
+                    ws.Cells[sanhak_a, sub_title3_x] = Layout[i].agent3;
+                    ws.Cells[sanhak_a, sub_title4_x] = Layout[i].agent4;
+                    ws.Cells[sanhak_a, sub_title5_x] = Layout[i].agent5;
+                    ws.Cells[sanhak_a, sub_title6_x] = Layout[i].agent6;
+                    ws.Cells[sanhak_a, sub_title7_x] = Layout[i].agent7;
                     Console.WriteLine("부서부 머지 완료");
 
                     // 측면부 제목 상단부 초기화
@@ -204,7 +204,7 @@ namespace Labal_making
             finally
             {
                 Console.WriteLine("파일작업 완료");
-                if (page == 2) { wb.Close(); }
+                wb.Close();
               
             }
         }
