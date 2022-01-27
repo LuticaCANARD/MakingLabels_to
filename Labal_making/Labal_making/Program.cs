@@ -11,7 +11,6 @@ pio = Labal_making.inputing.got_list(url + "\\입력.xlsx");
 List<Labal_making.projn.projn_non>big_list = new List<Labal_making.projn.projn_non>();
 List<Labal_making.projn.projn_non> samll_list = new List<Labal_making.projn.projn_non>();
 big_list = Labal_making.Largeset.Get_Anomimuslist(pio, false);
-samll_list = Labal_making.Largeset.Get_Anomimuslist(pio, true);
 
 //big
 List<Labal_making.Layout>L_big = new List<Labal_making.Layout>();
