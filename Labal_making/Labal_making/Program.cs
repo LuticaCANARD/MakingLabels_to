@@ -18,10 +18,4 @@ List<Labal_making.Layout>L_big = new List<Labal_making.Layout>();
 L_big = Labal_making.Largeset.Make_Layout(big_list);
 Labal_making.output.outputint(L_big, url + "\\결과.xlsx", 1);
 
-//small
-
-List<Labal_making.Layout> L_sma = new List<Labal_making.Layout>();
-L_sma = Labal_making.Largeset.Make_Layout(samll_list);
-Labal_making.output.outputint(L_sma, url + "\\결과.xlsx", 2);
-
 Console.WriteLine(" 완료");

@@ -31,13 +31,18 @@ namespace Labal_making
                 Console.WriteLine(ws.Cells[readingpoint, 1].Value());
                 while ((ws.Cells[readingpoint, 1].Value() != ""&& readingpoint<5000))
                 {
+                    int kimio = 0;
+                    if(ws.Cells[readingpoint, 6].Value() != 0)
+                    {
+                        kimio = ws.Cells[readingpoint, 6].Value();
+                    }
                     projn pix = new projn(
                         ws.Cells[readingpoint, 1].Value(),
                         ws.Cells[readingpoint, 2].Value(),
                         (int)ws.Cells[readingpoint, 4].Value(),
                         ws.Cells[readingpoint, 3].Value(),
                         (int)ws.Cells[readingpoint, 5].Value(),
-                        (int)ws.Cells[readingpoint, 6].Value());
+                        kimio);
                     output.Add(pix);
                     readingpoint++;
                 }
