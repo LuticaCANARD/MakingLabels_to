@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\라벨제조기\\Labal_making\\MakingLabels_to\\Labal_making\\Labal_making\\Labal_making.csproj": {}
+    "C:\\Users\\presa\\Source\\Repos\\LuticaCANARD\\MakingLabels_to\\Labal_making\\Labal_making\\Labal_making.csproj": {}
   },
   "projects": {
-    "D:\\라벨제조기\\Labal_making\\MakingLabels_to\\Labal_making\\Labal_making\\Labal_making.csproj": {
+    "C:\\Users\\presa\\Source\\Repos\\LuticaCANARD\\MakingLabels_to\\Labal_making\\Labal_making\\Labal_making.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\라벨제조기\\Labal_making\\MakingLabels_to\\Labal_making\\Labal_making\\Labal_making.csproj",
+        "projectUniqueName": "C:\\Users\\presa\\Source\\Repos\\LuticaCANARD\\MakingLabels_to\\Labal_making\\Labal_making\\Labal_making.csproj",
         "projectName": "Labal_making",
-        "projectPath": "D:\\라벨제조기\\Labal_making\\MakingLabels_to\\Labal_making\\Labal_making\\Labal_making.csproj",
+        "projectPath": "C:\\Users\\presa\\Source\\Repos\\LuticaCANARD\\MakingLabels_to\\Labal_making\\Labal_making\\Labal_making.csproj",
         "packagesPath": "C:\\Users\\presa\\.nuget\\packages\\",
-        "outputPath": "D:\\라벨제조기\\Labal_making\\MakingLabels_to\\Labal_making\\Labal_making\\obj\\",
+        "outputPath": "C:\\Users\\presa\\Source\\Repos\\LuticaCANARD\\MakingLabels_to\\Labal_making\\Labal_making\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\presa\\AppData\\Roaming\\NuGet\\NuGet.Config",

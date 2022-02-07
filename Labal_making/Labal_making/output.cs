@@ -104,6 +104,7 @@ namespace Labal_making
                     ws.Range[ws.Cells[year_y, 1], ws.Cells[year_y, 4]].RowHeight = 30;
                     ws.Range[ws.Cells[kk_y, 1], ws.Cells[kk_y, 4]].RowHeight = 30;
                     ws.Range[ws.Cells[num_y, 1], ws.Cells[num_y, 4]].RowHeight = 30;
+                    ws.Range[ws.Cells[xp, 1], ws.Cells[xp, 4]].RowHeight = 0;
                     Console.WriteLine("측면부 설정 완료");
 
                     // 이름부 입력
