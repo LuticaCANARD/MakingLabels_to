@@ -96,7 +96,7 @@ namespace Labal_making
                         lk++;
                         ws.Cells[num_y - 1, kipa] = "분류번호";
                         ws.Cells[10 + xp, kipa] = "제목";
-                        ws.Cells[35 + xp, kipa] = "부서명";
+                        ws.Cells[35 + xp, kipa] = "기관명";
                     }
 
 
